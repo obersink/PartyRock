@@ -42,15 +42,24 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ir4-k3-Hqy">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="38"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="19"/>
+                                                <state key="normal" title="Top Videos">
+                                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl2-K7-3Cm">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="38"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="19"/>
+                                                <state key="normal" title="Top Songs">
+                                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-LX-Ela">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-LX-Ela" userLabel="Events">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="38"/>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="19"/>
+                                                <state key="normal" title="Events">
+                                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -92,7 +101,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.71521675586700439" green="0.93734675645828247" blue="0.79348200559616089" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.99117213487625122" green="0.99635642766952515" blue="0.99172490835189819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="Xb1-US-slI" firstAttribute="leading" secondItem="3Ka-jN-eU7" secondAttribute="leadingMargin" id="0D1-LP-QbL"/>
                                                 <constraint firstItem="0Sc-rK-ae8" firstAttribute="leading" secondItem="Xb1-US-slI" secondAttribute="trailing" constant="17" id="3Bs-EC-nrF"/>
@@ -128,7 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="oRA-1j-QCa" id="1KN-PW-sJt"/>
-                        <segue destination="cxD-He-eoo" kind="showDetail" identifier="VideoVC" id="sp0-bB-Rs0"/>
+                        <segue destination="cxD-He-eoo" kind="showDetail" identifier="SegueToVideoVC" id="sp0-bB-Rs0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,19 +162,38 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7zZ-qb-Pee" secondAttribute="height" multiplier="16:9" id="eeP-LJ-E5g"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="cxD-He-eoo" id="AcF-Ip-sqQ"/>
+                                </connections>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kho-Yc-gbx">
+                                <rect key="frame" x="20" y="231" width="335" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="B0F-mx-vo3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Kho-Yc-gbx" firstAttribute="leading" secondItem="ZMA-kF-o2N" secondAttribute="leading" constant="20" id="20Q-Pi-cpt"/>
+                            <constraint firstItem="Kho-Yc-gbx" firstAttribute="top" secondItem="7zZ-qb-Pee" secondAttribute="bottom" constant="20" id="Eyk-1Z-iI9"/>
                             <constraint firstAttribute="trailing" secondItem="7zZ-qb-Pee" secondAttribute="trailing" id="Hqv-Sy-Ywd"/>
+                            <constraint firstAttribute="trailing" secondItem="Kho-Yc-gbx" secondAttribute="trailing" constant="20" id="ZMB-lB-uLr"/>
                             <constraint firstItem="7zZ-qb-Pee" firstAttribute="leading" secondItem="ZMA-kF-o2N" secondAttribute="leading" id="gWd-sm-0gf"/>
                             <constraint firstItem="7zZ-qb-Pee" firstAttribute="top" secondItem="ZMA-kF-o2N" secondAttribute="top" id="tvo-pJ-ekM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Kho-Yc-gbx" id="iAH-XJ-XNB"/>
+                        <outlet property="webView" destination="7zZ-qb-Pee" id="tdk-M3-YD6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3O-cW-cVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="37"/>
+            <point key="canvasLocation" x="757.60000000000002" y="36.431784107946029"/>
         </scene>
     </scenes>
     <resources>

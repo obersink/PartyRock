@@ -21,7 +21,20 @@ class PartyCell: UITableViewCell {
     //partyrock is the data/model
     func updateUI(partyRock: PartyRock) {
         videoTitle.text = partyRock.videoTitle
+        let url = URL(string: partyRock.imgURL)
         
+        //2nd thread
+        DispatchQueue.global().async {
+            do{
+                let data = try Data(contentsOf: url!)
+                DispatchQueue.main.async {
+                    self.videoThumbnail.image = UIImage(data: data)
+                }
+            } catch {
+                
+            }
+        }
     }
 
 }
+
